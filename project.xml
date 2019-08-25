@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="MofoOneLife" package="com.sample.MofoOneLife" version="1.0.0" company="MofoOneLife" />
+	<app main="Main" path="export" file="MofoOneLife" />
+	<window width="0" height="0" fps="60" vsync="false" antialiasing="4"/>
+	
+	<source path="src" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="actuate"/>
+	<haxedef name="canvas" if="html5"/>
+	<assets path="assets" embed="false"/>
+	
+</project>
