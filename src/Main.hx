@@ -97,6 +97,11 @@ class Main extends Sprite
 		//trace("width " + image.width + " height " + height);
 		image.height = stage.stageHeight * 1;
 		image.width = image.height * ratio;
+		if (image.width > stage.stageWidth)
+		{
+			image.height = stage.stageWidth/ratio;
+			image.width = stage.stageWidth;
+		}
 		trace("scale " + image.scaleX + " " + image.scaleY);
 		center();
 	}

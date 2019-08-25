@@ -893,9 +893,9 @@ ApplicationMain.create = function(config) {
 	ManifestResources.init(config);
 	var _this = app.meta;
 	if(__map_reserved["build"] != null) {
-		_this.setReserved("build","99");
+		_this.setReserved("build","1");
 	} else {
-		_this.h["build"] = "99";
+		_this.h["build"] = "1";
 	}
 	var _this1 = app.meta;
 	if(__map_reserved["company"] != null) {
@@ -3810,7 +3810,11 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		var ratio = this.image.get_width() / this.image.get_height();
 		this.image.set_height(this.stage.stageHeight);
 		this.image.set_width(this.image.get_height() * ratio);
-		haxe_Log.trace("scale " + this.image.get_scaleX() + " " + this.image.get_scaleY(),{ fileName : "src/Main.hx", lineNumber : 100, className : "Main", methodName : "resize"});
+		if(this.image.get_width() > this.stage.stageWidth) {
+			this.image.set_height(this.stage.stageWidth / ratio);
+			this.image.set_width(this.stage.stageWidth);
+		}
+		haxe_Log.trace("scale " + this.image.get_scaleX() + " " + this.image.get_scaleY(),{ fileName : "src/Main.hx", lineNumber : 105, className : "Main", methodName : "resize"});
 		this.center();
 	}
 	,center: function() {
